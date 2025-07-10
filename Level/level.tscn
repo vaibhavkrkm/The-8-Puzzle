@@ -1,0 +1,223 @@
+[gd_scene load_steps=18 format=3 uid="uid://c63lbfi5wllc3"]
+
+[ext_resource type="Script" path="res://Level/level.gd" id="1_mndiv"]
+[ext_resource type="Texture2D" uid="uid://dwq5511qenl5m" path="res://Assets/UI/wooden-texture.jpg" id="1_ymakk"]
+[ext_resource type="Texture2D" uid="uid://cylf5igvh1r76" path="res://Assets/Numbers/board.png" id="2_cfpmc"]
+[ext_resource type="PackedScene" uid="uid://du3uu5wbcn4us" path="res://Level/cell.tscn" id="4_2jf8y"]
+[ext_resource type="Texture2D" uid="uid://m7i6xxwa8vl4" path="res://Assets/Numbers/num1.png" id="5_26ryc"]
+[ext_resource type="Texture2D" uid="uid://byvi7ut46dvvj" path="res://Assets/Numbers/num2.png" id="6_8vpdm"]
+[ext_resource type="Texture2D" uid="uid://b3d7ryke8s1xu" path="res://Assets/Numbers/num3.png" id="7_mqnus"]
+[ext_resource type="Texture2D" uid="uid://conapf1v3402t" path="res://Assets/Numbers/num4.png" id="8_s73n7"]
+[ext_resource type="Texture2D" uid="uid://d2wgijiokiyrq" path="res://Assets/Numbers/num5.png" id="9_dlurj"]
+[ext_resource type="Texture2D" uid="uid://bsvln3nd8dl1k" path="res://Assets/Numbers/num6.png" id="10_nnnub"]
+[ext_resource type="Texture2D" uid="uid://c5kdlybasnqfm" path="res://Assets/Numbers/num7.png" id="11_u6wjo"]
+[ext_resource type="Texture2D" uid="uid://cvgduvrnb3c8n" path="res://Assets/Numbers/num8.png" id="12_7lo4x"]
+[ext_resource type="FontFile" uid="uid://h3bkw5dahm4e" path="res://Assets/Fonts/AGENCYB.TTF" id="13_xsr7g"]
+[ext_resource type="Texture2D" uid="uid://beyyjv37k4tf1" path="res://Assets/UI/back_to_menu.png" id="14_cc0n6"]
+[ext_resource type="Texture2D" uid="uid://iutltofpdru6" path="res://Assets/UI/back_to_menu_pressed.png" id="15_gfrmh"]
+[ext_resource type="Texture2D" uid="uid://3jt30owf26x7" path="res://Assets/UI/back_to_menu_hover.png" id="15_hr2qc"]
+[ext_resource type="Texture2D" uid="uid://dk4x7npk321vq" path="res://Assets/UI/chances_left.png" id="17_2r720"]
+
+[node name="Level" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mndiv")
+TWEENING_TIME = 0.3
+metadata/_edit_lock_ = true
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ymakk")
+expand_mode = 1
+stretch_mode = 6
+metadata/_edit_lock_ = true
+
+[node name="BoardPositions" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_cfpmc")
+
+[node name="Pos00" type="Marker2D" parent="BoardPositions"]
+position = Vector2(17, 19)
+
+[node name="Pos01" type="Marker2D" parent="BoardPositions"]
+position = Vector2(157, 19)
+
+[node name="Pos02" type="Marker2D" parent="BoardPositions"]
+position = Vector2(297, 19)
+
+[node name="Pos10" type="Marker2D" parent="BoardPositions"]
+position = Vector2(17, 155)
+
+[node name="Pos11" type="Marker2D" parent="BoardPositions"]
+position = Vector2(157, 155)
+
+[node name="Pos12" type="Marker2D" parent="BoardPositions"]
+position = Vector2(297, 155)
+
+[node name="Pos20" type="Marker2D" parent="BoardPositions"]
+position = Vector2(17, 291)
+
+[node name="Pos21" type="Marker2D" parent="BoardPositions"]
+position = Vector2(157, 291)
+
+[node name="Pos22" type="Marker2D" parent="BoardPositions"]
+position = Vector2(297, 291)
+
+[node name="BoardCells" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 358.0
+offset_top = 106.0
+offset_right = 358.0
+offset_bottom = 106.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Cell1" parent="BoardCells" instance=ExtResource("4_2jf8y")]
+layout_mode = 0
+offset_left = -893.0
+offset_top = -664.0
+offset_right = -773.0
+offset_bottom = -544.0
+texture = ExtResource("5_26ryc")
+
+[node name="Cell2" parent="BoardCells" instance=ExtResource("4_2jf8y")]
+layout_mode = 0
+offset_left = -733.0
+offset_top = -664.0
+offset_right = -613.0
+offset_bottom = -544.0
+texture = ExtResource("6_8vpdm")
+
+[node name="Cell3" parent="BoardCells" instance=ExtResource("4_2jf8y")]
+layout_mode = 0
+offset_left = -557.0
+offset_top = -664.0
+offset_right = -437.0
+offset_bottom = -544.0
+texture = ExtResource("7_mqnus")
+
+[node name="Cell4" parent="BoardCells" instance=ExtResource("4_2jf8y")]
+layout_mode = 0
+offset_left = -893.0
+offset_top = -480.0
+offset_right = -773.0
+offset_bottom = -360.0
+texture = ExtResource("8_s73n7")
+
+[node name="Cell5" parent="BoardCells" instance=ExtResource("4_2jf8y")]
+layout_mode = 0
+offset_left = -733.0
+offset_top = -480.0
+offset_right = -613.0
+offset_bottom = -360.0
+texture = ExtResource("9_dlurj")
+
+[node name="Cell6" parent="BoardCells" instance=ExtResource("4_2jf8y")]
+layout_mode = 0
+offset_left = -557.0
+offset_top = -480.0
+offset_right = -437.0
+offset_bottom = -360.0
+texture = ExtResource("10_nnnub")
+
+[node name="Cell7" parent="BoardCells" instance=ExtResource("4_2jf8y")]
+layout_mode = 0
+offset_left = -893.0
+offset_top = -312.0
+offset_right = -773.0
+offset_bottom = -192.0
+texture = ExtResource("11_u6wjo")
+
+[node name="Cell8" parent="BoardCells" instance=ExtResource("4_2jf8y")]
+layout_mode = 0
+offset_left = -733.0
+offset_top = -312.0
+offset_right = -613.0
+offset_bottom = -192.0
+texture = ExtResource("12_7lo4x")
+
+[node name="SwapTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ChancesLeftLabel" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 318.0
+offset_right = 337.0
+offset_bottom = 446.0
+theme_override_fonts/font = ExtResource("13_xsr7g")
+theme_override_font_sizes/font_size = 50
+text = "Chances Left:
+50"
+horizontal_alignment = 1
+
+[node name="BackToMenuLabel" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 814.0
+offset_top = 318.0
+offset_right = 1145.0
+offset_bottom = 446.0
+theme_override_fonts/font = ExtResource("13_xsr7g")
+theme_override_font_sizes/font_size = 50
+text = "Back to
+Menu"
+horizontal_alignment = 1
+
+[node name="BackToMenuButton" type="TextureButton" parent="UI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -233.0
+offset_top = 184.0
+offset_right = -113.0
+offset_bottom = 304.0
+grow_horizontal = 0
+texture_normal = ExtResource("14_cc0n6")
+texture_pressed = ExtResource("15_gfrmh")
+texture_hover = ExtResource("15_hr2qc")
+
+[node name="ChancesLeft" type="TextureRect" parent="UI"]
+layout_mode = 1
+offset_left = 103.0
+offset_top = 184.0
+offset_right = 233.0
+offset_bottom = 314.0
+texture = ExtResource("17_2r720")
+expand_mode = 1
+stretch_mode = 6
+
+[connection signal="timeout" from="SwapTimer" to="." method="_on_swap_timer_timeout"]
+[connection signal="pressed" from="UI/BackToMenuButton" to="." method="_on_back_to_menu_button_pressed"]

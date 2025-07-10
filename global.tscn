@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://ysr4rwnh2ymf"]
+
+[ext_resource type="Script" path="res://global.gd" id="1_70pd0"]
+[ext_resource type="AudioStream" uid="uid://cahjpj4l57g5g" path="res://Assets/Sounds/turn2.wav" id="3_roftx"]
+[ext_resource type="AudioStream" uid="uid://ctd0pbrxb6wgf" path="res://Assets/Sounds/LevelComplete.wav" id="3_ym5w0"]
+[ext_resource type="AudioStream" uid="uid://cvlw4rxgm46xf" path="res://Assets/Sounds/lose.mp3" id="4_5hhqo"]
+[ext_resource type="AudioStream" uid="uid://c5msiymyyg7nf" path="res://Assets/Sounds/click.wav" id="5_62wlp"]
+
+[node name="Global" type="Node"]
+script = ExtResource("1_70pd0")
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="MoveSound" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("3_roftx")
+
+[node name="WinSound" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("3_ym5w0")
+
+[node name="LoseSound" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("4_5hhqo")
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("5_62wlp")

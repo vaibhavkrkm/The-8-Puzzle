@@ -1,0 +1,285 @@
+[gd_scene load_steps=14 format=3 uid="uid://dlcq32vti4yvj"]
+
+[ext_resource type="Texture2D" uid="uid://dwq5511qenl5m" path="res://Assets/UI/wooden-texture.jpg" id="1_bglyx"]
+[ext_resource type="Script" path="res://UI/menu.gd" id="1_ptbyi"]
+[ext_resource type="Texture2D" uid="uid://cb46yskknu5xn" path="res://Assets/UI/Puzzle.png" id="3_2jxvm"]
+[ext_resource type="Texture2D" uid="uid://df3p32xquew3v" path="res://Assets/UI/play.png" id="4_iboaf"]
+[ext_resource type="Texture2D" uid="uid://cs31odixo0g3o" path="res://Assets/UI/play_pressed.png" id="5_1bmac"]
+[ext_resource type="Texture2D" uid="uid://c47y6ieblsvrd" path="res://Assets/UI/how_to_play.png" id="5_fb28b"]
+[ext_resource type="Texture2D" uid="uid://dt6xpsgpc44mf" path="res://Assets/UI/play_hover.png" id="6_o1cag"]
+[ext_resource type="Texture2D" uid="uid://cvg0i36j427cg" path="res://Assets/UI/quit.png" id="6_q0uyy"]
+[ext_resource type="FontFile" uid="uid://h3bkw5dahm4e" path="res://Assets/Fonts/AGENCYB.TTF" id="7_uqqgq"]
+[ext_resource type="Texture2D" uid="uid://bpocuc3xp72op" path="res://Assets/UI/how_to_play_pressed.png" id="8_fns1t"]
+[ext_resource type="Texture2D" uid="uid://bu1cqt5hsaeq0" path="res://Assets/UI/how_to_play_hover.png" id="9_ooch2"]
+[ext_resource type="Texture2D" uid="uid://cnbuv5ccredrb" path="res://Assets/UI/quit_pressed.png" id="11_c7pkx"]
+[ext_resource type="Texture2D" uid="uid://fyf2ebdijrp5" path="res://Assets/UI/quit_hover.png" id="12_hldt8"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ptbyi")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_bglyx")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Logo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -159.0
+offset_right = 159.0
+offset_bottom = 405.0
+grow_horizontal = 2
+texture = ExtResource("3_2jxvm")
+stretch_mode = 6
+
+[node name="Buttons" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Play" type="TextureButton" parent="Buttons"]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 404.0
+offset_right = 337.0
+offset_bottom = 571.0
+texture_normal = ExtResource("4_iboaf")
+texture_pressed = ExtResource("5_1bmac")
+texture_hover = ExtResource("6_o1cag")
+
+[node name="Label" type="Label" parent="Buttons/Play"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_uqqgq")
+theme_override_font_sizes/font_size = 20
+text = "Start Game"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="HowToPlay" type="TextureButton" parent="Buttons"]
+layout_mode = 0
+offset_left = 506.0
+offset_top = 404.0
+offset_right = 673.0
+offset_bottom = 571.0
+texture_normal = ExtResource("5_fb28b")
+texture_pressed = ExtResource("8_fns1t")
+texture_hover = ExtResource("9_ooch2")
+
+[node name="Label" type="Label" parent="Buttons/HowToPlay"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_uqqgq")
+theme_override_font_sizes/font_size = 20
+text = "How to Play?"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Quit" type="TextureButton" parent="Buttons"]
+layout_mode = 0
+offset_left = 822.0
+offset_top = 404.0
+offset_right = 989.0
+offset_bottom = 571.0
+texture_normal = ExtResource("6_q0uyy")
+texture_pressed = ExtResource("11_c7pkx")
+texture_hover = ExtResource("12_hldt8")
+
+[node name="Label" type="Label" parent="Buttons/Quit"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_uqqgq")
+theme_override_font_sizes/font_size = 20
+text = "Quit Game"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Overlay" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.533333)
+
+[node name="WinUI" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.5
+offset_top = -136.0
+offset_right = 220.5
+offset_bottom = 136.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.298039, 0.105882, 0.227451, 1)
+
+[node name="WinLabel" type="Label" parent="WinUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.0
+offset_top = -114.5
+offset_right = 116.0
+offset_bottom = 2.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.552941, 0.972549, 0.294118, 1)
+theme_override_fonts/font = ExtResource("7_uqqgq")
+theme_override_font_sizes/font_size = 30
+text = "Congrats! =)
+You solved the puzzle!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MovesLabel" type="Label" parent="WinUI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -126.0
+offset_top = -119.0
+offset_right = 126.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0.992157, 0.968627, 1)
+theme_override_fonts/font = ExtResource("7_uqqgq")
+theme_override_font_sizes/font_size = 30
+text = "You solved in: 50 moves!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="WinUI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -43.0
+offset_top = -60.0
+offset_right = 43.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_hover_color = Color(0.827451, 0.305882, 0.92549, 1)
+theme_override_fonts/font = ExtResource("7_uqqgq")
+theme_override_font_sizes/font_size = 25
+text = "Continue"
+
+[node name="LoseUI" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.5
+offset_top = -136.0
+offset_right = 220.5
+offset_bottom = 136.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.580392, 0.137255, 0.0392157, 1)
+
+[node name="LoseLabel" type="Label" parent="LoseUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.0
+offset_top = -106.5
+offset_right = 116.0
+offset_bottom = 10.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.823529, 0.611765, 1)
+theme_override_fonts/font = ExtResource("7_uqqgq")
+theme_override_font_sizes/font_size = 40
+text = "Gameover! :(
+Better luck next time!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="LoseUI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -43.0
+offset_top = -84.0
+offset_right = 43.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_hover_color = Color(0.827451, 0.305882, 0.92549, 1)
+theme_override_fonts/font = ExtResource("7_uqqgq")
+theme_override_font_sizes/font_size = 25
+text = "Continue"
+
+[connection signal="mouse_entered" from="Buttons/Play" to="." method="_on_play_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/Play" to="." method="_on_play_mouse_exited"]
+[connection signal="pressed" from="Buttons/Play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="Buttons/HowToPlay" to="." method="_on_how_to_play_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/HowToPlay" to="." method="_on_how_to_play_mouse_exited"]
+[connection signal="pressed" from="Buttons/HowToPlay" to="." method="_on_how_to_play_pressed"]
+[connection signal="mouse_entered" from="Buttons/Quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/Quit" to="." method="_on_quit_mouse_exited"]
+[connection signal="pressed" from="Buttons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="WinUI/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="LoseUI/ContinueButton" to="." method="_on_continue_button_pressed"]

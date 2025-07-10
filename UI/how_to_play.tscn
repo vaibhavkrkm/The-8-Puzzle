@@ -1,0 +1,138 @@
+[gd_scene load_steps=8 format=3 uid="uid://cy07oibmdiwp5"]
+
+[ext_resource type="Script" path="res://UI/how_to_play.gd" id="1_em6wj"]
+[ext_resource type="Texture2D" uid="uid://dwq5511qenl5m" path="res://Assets/UI/wooden-texture.jpg" id="1_ninu2"]
+[ext_resource type="FontFile" uid="uid://h3bkw5dahm4e" path="res://Assets/Fonts/AGENCYB.TTF" id="2_svyyx"]
+[ext_resource type="Texture2D" uid="uid://igogj0poq8cl" path="res://Assets/UI/how_to_play_board1.png" id="3_iiaa1"]
+[ext_resource type="Texture2D" uid="uid://bu5ul2kswaob8" path="res://Assets/UI/arrow-25832_640.png" id="4_6vcgt"]
+[ext_resource type="Texture2D" uid="uid://bjvhapdkfvcpe" path="res://Assets/UI/how_to_play_board2.png" id="4_c03xb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uuo76"]
+bg_color = Color(0.741176, 0.0941176, 0.239216, 1)
+
+[node name="HowToPlay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_em6wj")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ninu2")
+expand_mode = 1
+stretch_mode = 6
+metadata/_edit_lock_ = true
+
+[node name="HowToPlayLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -124.0
+offset_top = 56.0
+offset_right = 124.0
+offset_bottom = 132.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_svyyx")
+theme_override_font_sizes/font_size = 60
+text = "How to Play:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Underline" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.5
+offset_top = -196.0
+offset_right = 140.5
+offset_bottom = -191.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Seperator" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -530.0
+offset_top = 521.0
+offset_right = -191.0
+offset_bottom = 526.0
+grow_horizontal = 0
+rotation = -1.5708
+
+[node name="Board1" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 251.0
+offset_right = 291.0
+offset_bottom = 445.0
+texture = ExtResource("3_iiaa1")
+expand_mode = 1
+
+[node name="Board2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 370.0
+offset_top = 251.0
+offset_right = 564.0
+offset_bottom = 445.0
+texture = ExtResource("4_c03xb")
+expand_mode = 1
+
+[node name="Arrow" type="TextureRect" parent="."]
+modulate = Color(0.964706, 0.666667, 0, 1)
+layout_mode = 0
+offset_left = 275.0
+offset_top = 309.0
+offset_right = 385.0
+offset_bottom = 379.0
+texture = ExtResource("4_6vcgt")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="ObjectiveLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 679.0
+offset_top = 163.0
+offset_right = 1069.0
+offset_bottom = 579.0
+theme_override_colors/font_color = Color(1, 1, 0.0431373, 1)
+theme_override_fonts/font = ExtResource("2_svyyx")
+theme_override_font_sizes/font_size = 40
+text = "Objective:
+Arrange the number tiles in
+increasing order from
+1 to 8 to win the challenge!
+
+Controls:
+WASD or ARROW KEYS
+to move tiles!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 533.0
+offset_right = 259.0
+offset_bottom = 589.0
+theme_override_colors/font_pressed_color = Color(0, 0.780392, 0.815686, 1)
+theme_override_fonts/font = ExtResource("2_svyyx")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_uuo76")
+text = "Back to Menu"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

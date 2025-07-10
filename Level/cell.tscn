@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://du3uu5wbcn4us"]
+
+[ext_resource type="Script" path="res://Level/cell.gd" id="1_hypyc"]
+
+[node name="Cell" type="TextureRect"]
+offset_right = 120.0
+offset_bottom = 120.0
+script = ExtResource("1_hypyc")
