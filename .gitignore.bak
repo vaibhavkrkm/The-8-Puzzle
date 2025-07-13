@@ -1,6 +1,6 @@
 # Godot 4+ specific ignores
 .godot/
-.mono/ # If using C#
+.mono/
 
 *.pck
 *.zip
