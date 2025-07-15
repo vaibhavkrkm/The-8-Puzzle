@@ -16,7 +16,7 @@ Use **arrow keys** or **WASD** keys to move the tiles
 
 ### Playing the Game (via pre-built executable)
 1. Download the latest version of the game from [releases](https://github.com/vaibhavkrkm/The-8-Puzzle/releases) or [itch.io page](https://lets-connect-team.itch.io/the-8-puzzle).
-2. Unzip the downloaded ZIP file.
+2. Double click the downloaded EXE file and extract at your desired location.
 3. Run *Number Shifting Game.exe* or *The 8 Puzzle.exe* (whichever one there is) and start playing!
 
 ### Running from Source (Godot 4)
